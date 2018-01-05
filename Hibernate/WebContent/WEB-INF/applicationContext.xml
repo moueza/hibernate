@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN 2.0//EN"
+		  "http://www.springframework.org/dtd/spring-beans-2.0.dtd">
+<beans default-autowire="autodetect">
+	<bean id="personManager" class="com.acme.PersonManager" scope="prototype" />
+
+	<!-- http://struts.apache.org/plugins/spring/ http://forum.spring.io/forum/spring-projects/container/21300-attribute-singleton-is-not-allowed-to-appear-in-element-bean -->
+	<bean id="bar" class="com.my.BarClass" scope="prototype" />
+</beans>
+  
