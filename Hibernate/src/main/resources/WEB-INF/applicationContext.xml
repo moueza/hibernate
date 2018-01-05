@@ -1,19 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
-<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN 2.0//EN"
-		  "http://www.springframework.org/dtd/spring-beans-2.0.dtd">
-<beans default-autowire="autodetect"
-	xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xmlns:context="http://www.springframework.org/schema/context"
+<!-- default-autowire="autodetect" -->
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans
-	http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
-	http://www.springframework.org/schema/context
-	http://www.springframework.org/schema/context/spring-context-2.5.xsd">
+   http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+   http://www.springframework.org/schema/context
+   http://www.springframework.org/schema/context/spring-context-3.0.xsd"
+	default-autowire="byName" default-autowire-candidates="*">
 
+	<context:component-scan base-package="*" />
 	<context:annotation-config />
-	<bean id="personManager" class="com.acme.PersonManager" scope="prototype" />
+	<bean id="personManager" class="com.acme.PersonManager" scope="prototype"
+		autowire="byName" />
 
 	<!-- http://struts.apache.org/plugins/spring/ http://forum.spring.io/forum/spring-projects/container/21300-attribute-singleton-is-not-allowed-to-appear-in-element-bean -->
-	<bean id="bar" class="com.my.BarClass" scope="prototype" />
+	<bean id="bar" class="com.my.BarClass" scope="prototype" autowire="byName" />
+
+	<!-- https://www.mkyong.com/spring/spring-auto-wiring-beans-with-autowired-annotation/ -->
+	<bean id="personn" class="entities.Person" scope="prototype"
+		autowire="byName">
+		<property name="age" value="29" />
+	</bean>
 </beans>
   
