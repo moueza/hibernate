@@ -2,7 +2,7 @@
 <web-app xmlns="http://java.sun.com/xml/ns/javaee" version="2.5">
 	<servlet>
 		<servlet-name>comingsoon</servlet-name>
-		<servlet-class>mysite.server.ComingSoonServlet</servlet-class>
+		<servlet-class>presentation.ControlServlet</servlet-class>
 	</servlet>
 	<servlet-mapping>
 		<servlet-name>comingsoon</servlet-name>
