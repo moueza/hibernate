@@ -14,4 +14,8 @@ public class PersonManager {
 	public void setCpt(Integer cpt) {
 		this.cpt = cpt;
 	}
+
+	public String printt() {
+		return "in PersonManager bean";
+	}
 }
