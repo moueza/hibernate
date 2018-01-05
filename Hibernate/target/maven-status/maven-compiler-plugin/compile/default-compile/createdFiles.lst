@@ -1,3 +1,6 @@
 moueza\Hibernate\HibernateUtils.class
 moueza\Hibernate\App.class
+services\ItemColorAction.class
+presentation\Tiles.class
 presentation\ControlServlet.class
+services\ItemColorForm.class
