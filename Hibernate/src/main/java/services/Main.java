@@ -4,7 +4,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
-
+/**'jobExplorer' with a different definition: replacing [Root bean: class [null]; scope=; abstract=false; lazyInit=false; autowireMode=3; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=simpleBatchConfiguration; factoryMethodName=jobExplorer; initMethodName=null; destroyMethodName=(inferred); defined in org.springframework.batch.core.configuration.annotation.SimpleBatchConfiguration] with [Root bean: class [null]; scope=; abstract=false; lazyInit=false; autowireMode=3; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=modularBatchConfiguration; factoryMethodName=jobExplorer; initMethodName=null; destroyMethodName=(inferred); defined in org.springframework.batch.core.configuration.annotation.ModularBatchConfiguration]
+ * 
+ * */
 import com.acme.PersonManager;
 import com.my.BarClass;
 
