@@ -10,6 +10,12 @@
 
 	<context:component-scan base-package="*" />
 	<context:annotation-config />
+	
+	
+	
+	
+	
+	
 	<bean id="personManager" class="com.acme.PersonManager" scope="prototype"
 		autowire="byName" />
 
