@@ -12,10 +12,8 @@
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-
-		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<servlet-api-version>3.1.0</servlet-api-version>
-		<springVersionMoi>5.0.2.RELEASE</springVersionMoi>
+		<springVersionMoi>4.3.8.RELEASE</springVersionMoi>
 
 
 		<jstl.version>1.2</jstl.version>
@@ -38,7 +36,7 @@
 
 
 
-
+		<!-- TODO Junit 5 -->
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>

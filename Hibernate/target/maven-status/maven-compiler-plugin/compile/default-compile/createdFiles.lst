@@ -1,6 +1,10 @@
+com\acme\PersonManager.class
 moueza\Hibernate\HibernateUtils.class
-moueza\Hibernate\App.class
-services\ItemColorAction.class
+com\my\BarClass.class
 presentation\Tiles.class
 presentation\ControlServlet.class
+moueza\Hibernate\App.class
+services\ItemColorAction.class
+entities\Person.class
 services\ItemColorForm.class
+services\Main.class

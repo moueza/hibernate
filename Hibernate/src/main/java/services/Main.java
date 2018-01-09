@@ -4,22 +4,16 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
-/**'jobExplorer' with a different definition: replacing [Root bean: class [null]; scope=; abstract=false; lazyInit=false; autowireMode=3; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=simpleBatchConfiguration; factoryMethodName=jobExplorer; initMethodName=null; destroyMethodName=(inferred); defined in org.springframework.batch.core.configuration.annotation.SimpleBatchConfiguration] with [Root bean: class [null]; scope=; abstract=false; lazyInit=false; autowireMode=3; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=modularBatchConfiguration; factoryMethodName=jobExplorer; initMethodName=null; destroyMethodName=(inferred); defined in org.springframework.batch.core.configuration.annotation.ModularBatchConfiguration]
- * 
- * */
+import org.springframework.context.support.FileSystemXmlApplicationContext;
+
 import com.acme.PersonManager;
-import com.my.BarClass;
 
 import entities.Person;
 
 public class Main {
 	// https://stackoverflow.com/questions/8313070/spring-bean-injection-in-a-main-method-class
-	@Autowired(required = false)
-	@Qualifier("personManager")
 	PersonManager personManager;
 
-	@Autowired(required = false)
-	@Qualifier("person")
 	Person person;
 
 	ApplicationContext context;
@@ -27,8 +21,8 @@ public class Main {
 	// TODO @Service annotation or @component
 	public void runn() {
 		// verif
-		System.out.println(person.getAge());
-		System.out.println(personManager.printt());
+		//System.out.println(person.getAge());
+		//System.out.println(personManager.printt());
 	}
 
 	public static void main(String[] args) {
@@ -37,18 +31,19 @@ public class Main {
 		 * TODO closable by try catch
 		 * https://stackoverflow.com/questions/14184059/spring-applicationcontext-resource-leak-context-is-never-closed
 		 */
-		ApplicationContext context = new ClassPathXmlApplicationContext("WEB-INF/applicationContext.xml");
-		BarClass bar = (BarClass) context.getBean("bar");
-		System.out.println(bar.print0());
-		
+		ApplicationContext context = new FileSystemXmlApplicationContext("src/applicationContext.xml");
+		System.out.println("lbl9");
+		//BarClass bar = (BarClass) context.getBean("bar");
+		System.out.println("lbl11");
+		//System.out.println(bar.print0());
+
 		System.out.println("lbl12");
-		
+
 		// verif
 		Main main = new Main();
 		main.runn();
 
 		System.out.println("lb130");
-		
 
 	}
 
