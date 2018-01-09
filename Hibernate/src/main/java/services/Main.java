@@ -40,7 +40,8 @@ public class Main {
 
 		System.out.println("lbl r20");
 
-//		System.out.println(this.getPerson().printAlea());
+		System.out.println("printAlea=" + this.getPerson().printAlea());
+		System.out.println("lbl r25");
 		System.out.println(this.getPerson());
 		// System.out.println(personManager.printt());
 		System.out.println("lbl r30");
@@ -61,9 +62,6 @@ public class Main {
 	public void setPerson(Person person) {
 		this.person = person;
 	}
-
-	
-	
 
 	public ApplicationContext getContext() {
 		return context;
@@ -88,9 +86,8 @@ public class Main {
 		System.out.println("lbl12");
 
 		// verif
-		//Main main = new Main();
-		
-		
+		// Main main = new Main();
+
 		Main main = (Main) context.getBean("main");
 		main.runn();
 
