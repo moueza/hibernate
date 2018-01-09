@@ -7,14 +7,22 @@
    http://www.springframework.org/schema/context
    http://www.springframework.org/schema/context/spring-context-3.0.xsd">
 	<!-- default-autowire-candidates="*" default-autowire="byName" -->
-	<context:component-scan base-package="entities" />
+	<context:component-scan base-package="entities,services" />
 	<context:annotation-config />
 
 
 
-	<bean id="person" class="entities.Person"></bean>
+	<bean id="person" class="entities.Person" autowire="byName" scope="singleton" />
+
+	<bean id="personImpl" class="entities.Person" autowire="byName"
+		scope="singleton">
+		<property name="age" value="18"></property>
+	</bean>
+
+	<bean id="bar" class="com.my.BarClass" autowire="byName" scope="singleton" />
 
 
+	<bean id="main" class="services.Main" scope="singleton" />
 
 </beans>
   

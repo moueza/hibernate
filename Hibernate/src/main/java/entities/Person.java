@@ -1,12 +1,12 @@
 package entities;
 
 public class Person {
-	public void Person() {
+	
 
-	}
-//	public void Person(Integer age) {
-//
-//	}
+	// public void Person(Integer age) {
+	//
+	// }
+	
 	Integer age;
 
 	public Integer getAge() {
@@ -17,5 +17,7 @@ public class Person {
 		this.age = age;
 	}
 
-	
+	public String printAlea() {
+		return "printAlea";
+	}
 }
