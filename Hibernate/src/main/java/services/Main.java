@@ -19,14 +19,18 @@ public class Main {
 	Person person;
 
 	@Autowired
-	Person personImpl;
+	Person personVALUED;
 
-	public Person getPersonImpl() {
-		return personImpl;
+	/** interface ou impl ? */
+	@Autowired
+	PersonService personService;
+
+	public Person getPersonVALUED() {
+		return personVALUED;
 	}
 
-	public void setPersonImpl(Person personImpl) {
-		this.personImpl = personImpl;
+	public void setPersonVALUED(Person personVALUED) {
+		this.personVALUED = personVALUED;
 	}
 
 	ApplicationContext context;
@@ -36,7 +40,7 @@ public class Main {
 		// verif
 		System.out.println(this.getPerson());
 		System.out.println("lbl r10");
-		System.out.println(this.getPersonImpl().getAge());
+		System.out.println(this.getPersonVALUED().getAge());
 
 		System.out.println("lbl r20");
 
@@ -45,6 +49,14 @@ public class Main {
 		System.out.println(this.getPerson());
 		// System.out.println(personManager.printt());
 		System.out.println("lbl r30");
+	}
+
+	public PersonService getPersonService() {
+		return personService;
+	}
+
+	public void setPersonService(PersonService personService) {
+		this.personService = personService;
 	}
 
 	public PersonManager getPersonManager() {
@@ -92,7 +104,11 @@ public class Main {
 		main.runn();
 
 		System.out.println("lb130");
-
+		/** implementer couches profondes d abord */
+		main.getPersonService().savePerson(main.getPersonVALUED());
+		System.out.println("lb140");
+		// TODO get back
+		System.out.println("lb150");
 	}
 
 }
