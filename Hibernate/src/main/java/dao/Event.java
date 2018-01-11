@@ -3,8 +3,28 @@ package dao;
 import java.util.Date;
 
 public class Event {
-Date date;
-	String title;
+	private Long id;
+
+	private String title;
+	private Date date;
+
+	public Event() {
+		// this form used by Hibernate
+	}
+
+	public Event(String title, Date date) {
+		// for application use, to create new events
+		this.title = title;
+		this.date = date;
+	}
+
+	public Long getId() {
+		return id;
+	}
+
+	private void setId(Long id) {
+		this.id = id;
+	}
 
 	public Date getDate() {
 		return date;
