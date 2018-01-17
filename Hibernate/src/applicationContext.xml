@@ -12,30 +12,30 @@
 
 
 
-	<bean id="person" class="entities.Person" autowire="byName" scope="prototype" />
+<!-- 	<bean id="person" class="entities.Person" autowire="byName" scope="prototype" /> -->
 
-	<bean id="personVALUED" class="entities.Person" autowire="byName"
-		scope="prototype">
-		<property name="age" value="18"></property>
-	</bean>
+<!-- 	<bean id="personVALUED" class="entities.Person" autowire="byName" -->
+<!-- 		scope="prototype"> -->
+<!-- 		<property name="age" value="18"></property> -->
+<!-- 	</bean> -->
 
-	<bean id="bar" class="com.my.BarClass" autowire="byName" scope="singleton" />
+<!-- 	<bean id="bar" class="com.my.BarClass" autowire="byName" scope="singleton" /> -->
 
-	<!-- +++++ -->
-	<bean id="main" class="services.Main" scope="singleton" />
+<!-- 	 +++++ --> 
+<!-- 	<bean id="main" class="services.Main" scope="singleton" /> -->
 
-	<bean id="personDAO" class="dao.PersonDAO" scope="singleton" />
+<!-- 	<bean id="personDAO" class="dao.PersonDAO" scope="singleton" /> -->
 
-	<bean id="personneServiceImpl" class="services.PersonneServiceImpl"
-		scope="singleton" />
+<!-- 	<bean id="personneServiceImpl" class="services.PersonneServiceImpl" -->
+<!-- 		scope="singleton" /> -->
 
-	<bean id="eventVALUED1" class="dao.Event" scope="prototype">
-		<property name="title" value="Our very first eventVALUED1!"></property>
+<!-- 	<bean id="eventVALUED1" class="dao.Event" scope="prototype"> -->
+<!-- 		<property name="title" value="Our very first eventVALUED1!"></property> -->
 
-	</bean>
-	<bean id="eventVALUED2" class="dao.Event" scope="prototype">
-		<property name="title" value="A follow up eventVALUED1"></property>
+<!-- 	</bean> -->
+<!-- 	<bean id="eventVALUED2" class="dao.Event" scope="prototype"> -->
+<!-- 		<property name="title" value="A follow up eventVALUED1"></property> -->
 
-	</bean>
+<!-- 	</bean> -->
 </beans>
   
