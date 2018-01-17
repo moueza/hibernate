@@ -10,6 +10,7 @@ import com.acme.PersonManager;
 import com.my.BarClass;
 
 import entities.Person;
+import services.*;
 
 public class Main {
 	// https://stackoverflow.com/questions/8313070/spring-bean-injection-in-a-main-method-class
@@ -17,14 +18,16 @@ public class Main {
 
 	@Autowired
 	Person person;
+	// Person person = (Person);
+	// = (Person)getBean;
 
 	@Autowired
 	Person personVALUED;
-
-	@Autowired
+	//
+	// @Autowired
 	Person personVALUED1;
-
-	/** interface ou impl ? */
+	//
+	// /** interface ou impl ? */
 	@Autowired
 	PersonService personService;
 
@@ -47,7 +50,11 @@ public class Main {
 
 		System.out.println("lbl r20");
 
-		System.out.println("printAlea=" + this.getPerson().printAlea());
+		// Person p = this.getPerson();
+		// System.out.println("printAlea=" + this.getPerson().printAlea());
+		System.out.println("printAlea p=" + person);
+		System.out.println("printAlea =" + person.printAlea());
+
 		System.out.println("lbl r25");
 		System.out.println(this.getPerson());
 		// System.out.println(personManager.printt());

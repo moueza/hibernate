@@ -11,6 +11,7 @@ import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import entities.Person;
+import dao.Event;
 
 public class PersonDAO {
 	public void PersonDAO() {
