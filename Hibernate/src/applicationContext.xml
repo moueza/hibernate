@@ -12,10 +12,10 @@
 
 
 
-	<bean id="person" class="entities.Person" autowire="byName" scope="singleton" />
+	<bean id="person" class="entities.Person" autowire="byName" scope="prototype" />
 
 	<bean id="personVALUED" class="entities.Person" autowire="byName"
-		scope="singleton">
+		scope="prototype">
 		<property name="age" value="18"></property>
 	</bean>
 
@@ -29,13 +29,13 @@
 	<bean id="personneServiceImpl" class="services.PersonneServiceImpl"
 		scope="singleton" />
 
-	<bean id="eventVALUED1" class="dao.Event" scope="singleton">
+	<bean id="eventVALUED1" class="dao.Event" scope="prototype">
 		<property name="title" value="Our very first eventVALUED1!"></property>
-		
+
 	</bean>
-	<bean id="eventVALUED2" class="dao.Event" scope="singleton">
+	<bean id="eventVALUED2" class="dao.Event" scope="prototype">
 		<property name="title" value="A follow up eventVALUED1"></property>
-		
+
 	</bean>
 </beans>
   

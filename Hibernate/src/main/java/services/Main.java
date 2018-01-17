@@ -21,6 +21,9 @@ public class Main {
 	@Autowired
 	Person personVALUED;
 
+	@Autowired
+	Person personVALUED1;
+
 	/** interface ou impl ? */
 	@Autowired
 	PersonService personService;
