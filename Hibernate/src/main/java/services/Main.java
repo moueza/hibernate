@@ -23,11 +23,12 @@ public class Main {
 
 	@Autowired
 	Person personVALUED;
+
 	//
 	// @Autowired
 	Person personVALUED1;
-	//
-	// /** interface ou impl ? */
+
+	/** interface ou impl ? */
 	@Autowired
 	PersonService personService;
 
@@ -59,6 +60,9 @@ public class Main {
 		System.out.println(this.getPerson());
 		// System.out.println(personManager.printt());
 		System.out.println("lbl r30");
+
+		personService.savePerson(personVALUED);
+		System.out.println("lbl r40");
 	}
 
 	public PersonService getPersonService() {

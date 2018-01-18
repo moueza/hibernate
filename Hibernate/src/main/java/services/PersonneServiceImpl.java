@@ -11,10 +11,15 @@ public class PersonneServiceImpl implements PersonService {
 	@Autowired
 	PersonDAO personDAO;
 
-	//TODO l autre direction presentation collecte
-	
-	public void savePerson(Person personVALUED) {
-	
+	// TODO l autre direction presentation collecte
+
+	// public void savePerson(Person personVALUED) {
+	/**
+	 * normalement, plus besoin de bean a cet endroit car deja introduit à 1 + ht
+	 * niveau
+	 */
+	public void savePerson(Person personn) {
+		personDAO.savePerson(personn);
 	}
 
 	public Person personAgeMax(List<Person> personsCollection) {
