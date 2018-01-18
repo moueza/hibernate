@@ -14,16 +14,16 @@ import entities.Person;
 import dao.Event;
 
 public class PersonDAO {
-	public void PersonDAO() {
-		this.eventVALUED1.setDate(new Date());
-		this.eventVALUED2.setDate(new Date());
-	}
-
 	@Autowired
 	Event eventVALUED1;
 
 	@Autowired
 	Event eventVALUED2;
+
+	public void PersonDAO() {
+		this.eventVALUED1.setDate(new Date());
+		this.eventVALUED2.setDate(new Date());
+	}
 
 	public Event getEvent() {
 		return eventVALUED1;
@@ -34,11 +34,14 @@ public class PersonDAO {
 	}
 
 	public void savePerson(Person personn) {
-		// https://docs.jboss.org/hibernate/orm/5.2/quickstart/html_single/
-		// A SessionFactory is set up once for an application!
-		final StandardServiceRegistry registry = new StandardServiceRegistryBuilder().configure() // configures settings
-																									// from
-																									// hibernate.cfg.xml
+		/**
+		 * https://docs.jboss.org/hibernate/orm/5.2/quickstart/html_single<BR>
+		 * A SessionFactory is set up once for an application!
+		 */
+		final StandardServiceRegistry registry = new StandardServiceRegistryBuilder().configure()
+				// configures settings
+				// from
+				// hibernate.cfg.xml
 				.build();
 		try {
 			SessionFactory sessionFactory = new MetadataSources(registry).buildMetadata().buildSessionFactory();
@@ -58,6 +61,7 @@ public class PersonDAO {
 			// building the SessionFactory
 			// so destroy it manually.
 			StandardServiceRegistryBuilder.destroy(registry);
+			System.out.println("savePerson KO");
 		}
 	}
 
