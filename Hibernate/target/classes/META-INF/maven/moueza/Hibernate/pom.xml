@@ -5,7 +5,7 @@
 	<groupId>moueza</groupId>
 	<artifactId>Hibernate</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-<!-- commons-dbcp -->
+	<!-- commons-dbcp -->
 	<name>Hibernate</name>
 	<url>http://maven.apache.org</url>
 
@@ -199,29 +199,37 @@
 
 
 
-<!-- https://mvnrepository.com/artifact/org.hibernatespatial/hibernate-spatial -->
-<!-- <dependency> -->
-<!--     <groupId>org.hibernatespatial</groupId> -->
-<!--     <artifactId>hibernate-spatial</artifactId> -->
-<!--     <version>1.1.1</version> -->
-<!-- </dependency> -->
+		<!-- https://mvnrepository.com/artifact/org.hibernatespatial/hibernate-spatial -->
+		<!-- <dependency> -->
+		<!-- <groupId>org.hibernatespatial</groupId> -->
+		<!-- <artifactId>hibernate-spatial</artifactId> -->
+		<!-- <version>1.1.1</version> -->
+		<!-- </dependency> -->
 
 
-<!-- https://mvnrepository.com/artifact/org.hibernate/hibernate-osgi -->
-<dependency>
-    <groupId>org.hibernate</groupId>
-    <artifactId>hibernate-osgi</artifactId>
-    <version>${hibernateVersionMoi}</version>
-</dependency>
+		<!-- https://mvnrepository.com/artifact/org.hibernate/hibernate-osgi -->
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-osgi</artifactId>
+			<version>${hibernateVersionMoi}</version>
+		</dependency>
 
 
-<!-- https://mvnrepository.com/artifact/org.hibernate/hibernate-jpamodelgen -->
-<dependency>
-    <groupId>org.hibernate</groupId>
-    <artifactId>hibernate-jpamodelgen</artifactId>
-    <version>${hibernateVersionMoi}</version>
-    <scope>provided</scope>
-</dependency>
+		<!-- https://mvnrepository.com/artifact/org.hibernate/hibernate-jpamodelgen -->
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-jpamodelgen</artifactId>
+			<version>${hibernateVersionMoi}</version>
+			<scope>provided</scope>
+		</dependency>
+
+	<!-- http://hibernate.org/orm/tooling/ -->
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-jpamodelgen</artifactId>
+			<!-- <version>5.2.12.Final</version> -->
+			<version>${hibernateVersionMoi}</version>
+		</dependency>
 
 		<!-- https://mvnrepository.com/artifact/org.springframework.data/spring-data-commons -->
 		<!-- commented car demande slj -->
