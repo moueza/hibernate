@@ -3,6 +3,7 @@ package dao;
 import java.util.Date;
 import java.util.List;
 
+import org.apache.logging.log4j.LogManager;
 import org.hibernate.CallbackException;
 import org.hibernate.HibernateException;
 import org.hibernate.JDBCException;
@@ -39,6 +40,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 import entities.Person;
 import dao.Event;
+import org.apache.logging.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
 
 public class PersonDAO {
 	@Autowired
@@ -53,9 +56,16 @@ public class PersonDAO {
 	 */
 	SessionFactory sessionFactory = null;
 
+	/**
+	 * Define a static logger variable so that it references the Logger instance
+	 * named "MyApp". http://logging.apache.org/log4j/2.x/manual/configuration.html
+	 */
+	private static final Logger logger = LogManager.getLogger(MyApp.class);
+
 	public void PersonDAO() {
 		this.eventVALUED1.setDate(new Date());
 		this.eventVALUED2.setDate(new Date());
+		logger.trace("PersonDAO");
 	}
 
 	public Event getEvent() {
@@ -77,6 +87,7 @@ public class PersonDAO {
 				// hibernate.cfg.xml
 				.build();
 		try {
+			logger.error("in try");
 			System.out.println("lbl7476 start in try");
 			// sessionFactory = new
 			// MetadataSources(registry).buildMetadata().buildSessionFactory();

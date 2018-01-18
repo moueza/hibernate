@@ -1,5 +1,7 @@
 package services;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.ApplicationContext;
@@ -9,10 +11,12 @@ import org.springframework.context.support.FileSystemXmlApplicationContext;
 import com.acme.PersonManager;
 import com.my.BarClass;
 
+import dao.MyApp;
 import entities.Person;
 import services.*;
 
 public class Main {
+
 	// https://stackoverflow.com/questions/8313070/spring-bean-injection-in-a-main-method-class
 	PersonManager personManager;
 
@@ -32,6 +36,12 @@ public class Main {
 	@Autowired
 	PersonService personService;
 
+	/**
+	 * Define a static logger variable so that it references the Logger instance
+	 * named "MyApp". http://logging.apache.org/log4j/2.x/manual/configuration.html
+	 */
+	private static final Logger logger = LogManager.getLogger(MyApp.class);
+
 	public Person getPersonVALUED() {
 		return personVALUED;
 	}
@@ -46,7 +56,12 @@ public class Main {
 	public void runn() {
 		// verif
 		System.out.println(this.getPerson());
-		System.out.println("lbl r10");
+
+		// System.out.println("lbl r10");
+		// TODO
+		logger.trace("lbl r09");
+		logger.error("lbl r10");
+
 		System.out.println(this.getPersonVALUED().getAge());
 
 		System.out.println("lbl r20");
@@ -119,8 +134,8 @@ public class Main {
 
 		System.out.println("lb130");
 		/** implementer couches profondes d abord */
-		//main.getPersonService().savePerson(main.getPersonVALUED());
-		//System.out.println("lb140");
+		// main.getPersonService().savePerson(main.getPersonVALUED());
+		// System.out.println("lb140");
 
 		// TODO get back
 		System.out.println("lb150");
