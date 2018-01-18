@@ -61,7 +61,8 @@ public class PersonDAO {
 
 	/**
 	 * Define a static logger variable so that it references the Logger instance
-	 * named "LoggerMoi". http://logging.apache.org/log4j/2.x/manual/configuration.html
+	 * named "LoggerMoi".
+	 * http://logging.apache.org/log4j/2.x/manual/configuration.html
 	 */
 	private static final Logger logger = LogManager.getLogger(LoggerMoi.class);
 
@@ -98,8 +99,8 @@ public class PersonDAO {
 			System.out.println("lbl7477 in try");
 			Metadata bm = ms.buildMetadata();
 			System.out.println("lbl7478 in try");
-			// sessionFactory = bm.buildSessionFactory();
-			sessionFactory = HibernateUtil.getSessionFactory();
+			sessionFactory = bm.buildSessionFactory();
+			// sessionFactory = HibernateUtil.getSessionFactory();
 			/**
 			 * https://stackoverflow.com/questions/14495088/hibernate-properties-not-found
 			 */
