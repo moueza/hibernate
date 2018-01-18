@@ -11,7 +11,7 @@ import org.springframework.context.support.FileSystemXmlApplicationContext;
 import com.acme.PersonManager;
 import com.my.BarClass;
 
-import dao.MyApp;
+import dao.LoggerMoi;
 import entities.Person;
 import services.*;
 
@@ -38,9 +38,9 @@ public class Main {
 
 	/**
 	 * Define a static logger variable so that it references the Logger instance
-	 * named "MyApp". http://logging.apache.org/log4j/2.x/manual/configuration.html
+	 * named "LoggerMoi". http://logging.apache.org/log4j/2.x/manual/configuration.html
 	 */
-	private static final Logger logger = LogManager.getLogger(MyApp.class);
+	private static final Logger logger = LogManager.getLogger(LoggerMoi.class);
 
 	public Person getPersonVALUED() {
 		return personVALUED;

@@ -38,7 +38,10 @@ import org.hibernate.procedure.UnknownSqlResultSetMappingException;
 import org.hibernate.type.SerializationException;
 import org.springframework.beans.factory.annotation.Autowired;
 
+import com.fasterxml.classmate.AnnotationConfiguration;
+
 import entities.Person;
+import services.HibernateUtil;
 import dao.Event;
 import org.apache.logging.log4j.Logger;
 import org.apache.logging.log4j.LogManager;
@@ -58,9 +61,9 @@ public class PersonDAO {
 
 	/**
 	 * Define a static logger variable so that it references the Logger instance
-	 * named "MyApp". http://logging.apache.org/log4j/2.x/manual/configuration.html
+	 * named "LoggerMoi". http://logging.apache.org/log4j/2.x/manual/configuration.html
 	 */
-	private static final Logger logger = LogManager.getLogger(MyApp.class);
+	private static final Logger logger = LogManager.getLogger(LoggerMoi.class);
 
 	public void PersonDAO() {
 		this.eventVALUED1.setDate(new Date());
@@ -95,8 +98,13 @@ public class PersonDAO {
 			System.out.println("lbl7477 in try");
 			Metadata bm = ms.buildMetadata();
 			System.out.println("lbl7478 in try");
-			sessionFactory = bm.buildSessionFactory();
-
+			// sessionFactory = bm.buildSessionFactory();
+			sessionFactory = HibernateUtil.getSessionFactory();
+			/**
+			 * https://stackoverflow.com/questions/14495088/hibernate-properties-not-found
+			 */
+			// Configuration configuration = new
+			// AnnotationConfiguration().configure().buildSessionFactory();
 			System.out.println("lbl7480 in try");
 			Session session = sessionFactory.openSession();
 			System.out.println("lbl7485 in try");
@@ -274,7 +282,14 @@ public class PersonDAO {
 			// building the SessionFactory
 			// so destroy it manually.
 			StandardServiceRegistryBuilder.destroy(registry);
-			System.out.println("savePerson KO");
+
+			// System.out.println("savePerson KO");
+			logger.error("savePerson KO");
+			/**
+			 * https://stackoverflow.com/questions/37896398/java-hibernate-throws-exception-at-boot
+			 */
+			throw new RuntimeException(e);
+
 		}
 	}
 

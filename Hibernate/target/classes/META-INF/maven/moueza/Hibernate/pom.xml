@@ -23,8 +23,13 @@
 		<dbcp.version>1.4</dbcp.version>
 		<hibernateVersionMoi>5.2.10.Final</hibernateVersionMoi>
 	</properties>
-
-
+	<!-- http://www.mkyong.com/hibernate/hibernate-error-an-annotationconfiguration-instance-is-required-to-use/ -->
+<repositories>
+    <repository>
+      <id>JBoss repository</id>
+      <url>http://repository.jboss.com/maven2/</url>
+    </repository>
+  </repositories>
 
 	<dependencies>
 		<!-- <dependency> -->
@@ -223,7 +228,7 @@
 			<scope>provided</scope>
 		</dependency>
 
-	<!-- http://hibernate.org/orm/tooling/ -->
+		<!-- http://hibernate.org/orm/tooling/ -->
 		<dependency>
 			<groupId>org.hibernate</groupId>
 			<artifactId>hibernate-jpamodelgen</artifactId>
@@ -322,6 +327,14 @@
 			<version>1.3.5</version>
 		</dependency>
 
+
+
+		<!-- Hibernate annotation http://www.mkyong.com/hibernate/hibernate-error-an-annotationconfiguration-instance-is-required-to-use/ -->
+		<dependency>
+			<groupId>hibernate-annotations</groupId>
+			<artifactId>hibernate-annotations</artifactId>
+			<version>3.3.0.GA</version>
+		</dependency>
 	</dependencies>
 
 	<!-- https://stackoverflow.com/questions/16300120/maven-throws-error-while-running-testng-test-cases -->
