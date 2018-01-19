@@ -41,6 +41,7 @@ public class Event {
 		this.date = date;
 	}
 
+	
 	public Long getId() {
 		return id;
 	}
