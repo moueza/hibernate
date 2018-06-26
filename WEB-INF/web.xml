@@ -1,12 +1,57 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<web-app xmlns="http://java.sun.com/xml/ns/j2ee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd" id="WebApp_ID">
+<web-app xmlns="http://java.sun.com/xml/ns/javaee"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
+	version="3.0" metadata-complete="true">
+
 	<display-name>hibernate</display-name>
+
+	<!-- https://stackoverflow.com/questions/20114955/beanfactory-not-initialized-or-already-closed-call-refresh-before -->
+	<!-- is for servlets ~ -->
+	<!-- <context-param> -->
+	<!-- <param-name>contextConfigLocation</param-name> -->
+	<!-- <param-value>/WEB-INF/applicationContextMoi.xml</param-value> -->
+	<!-- </context-param> -->
+	<filter>
+		<!-- https://struts.apache.org/getting-started/how-to-create-a-struts2-web-application.html -->
+		<filter-name>struts22</filter-name>
+		<!-- <filter-class>org.apache.struts2.dispatcher.ng.filter.StrutsPrepareAndExecuteFilter</filter-class> -->
+		<filter-class>org.apache.struts2.dispatcher.ng.filter.StrutsPrepareAndExecuteFilter</filter-class>
+		<!-- http://doujiang327.iteye.com/blog/1235335 -->
+
+		<!-- <init-param> -->
+		<!-- <param-name>config</param-name> -->
+		<!-- <param-value>platform-web.xml,struts-default.xml,struts-plugin.xml,resources/struts/struts.xml</param-value> -->
+		<!-- </init-param> -->
+	</filter>
+	<!-- <filter> -->
+	<!-- <filter-name>struts2</filter-name> -->
+	<!-- <filter-class>org.apache.struts2.dispatcher.FilterDispatcher</filter-class> -->
+	<!-- </filter> -->
+	<filter-mapping>
+		<filter-name>struts22</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+
+	<!-- root context (vs servlet context https://stackoverflow.com/questions/11708967/what-is-the-difference-between-applicationcontext-and-webapplicationcontext-in-s) -->
+	<listener>
+		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+	</listener>
+	<context-param>
+		<param-name>contextConfigLocation</param-name>
+<!-- 		<param-value>/WEB-INF/applicationContextMoi.xml</param-value> -->
+		<param-value>/WEB-INF/applicationContextMoi.xml</param-value>
+	</context-param>
+
+	<session-config>
+		<session-timeout>30</session-timeout>
+	</session-config>
 	<welcome-file-list>
-		<welcome-file>index.html</welcome-file>
-		<welcome-file>index.htm</welcome-file>
-		<welcome-file>index.jsp</welcome-file>
-		<welcome-file>default.html</welcome-file>
-		<welcome-file>default.htm</welcome-file>
-		<welcome-file>default.jsp</welcome-file>
+		<welcome-file>indexx.jsp</welcome-file>
 	</welcome-file-list>
+
+
 </web-app>
+
+
+

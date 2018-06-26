@@ -1,0 +1,17 @@
+com\acme\PersonManager.class
+moueza\Hibernate\HibernateUtils.class
+services\PersonneServiceImpl.class
+dao\Event.class
+services\PersonService.class
+moueza\Hibernate\App.class
+services\ItemColorAction.class
+com\my\BarClass.class
+entities\Match.class
+presentation\Tiles.class
+dao\LoggerMoi.class
+presentation\ControlServlet.class
+services\HibernateUtil.class
+entities\Person.class
+dao\PersonDAO.class
+services\ItemColorForm.class
+services\Main.class

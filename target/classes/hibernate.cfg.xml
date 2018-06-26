@@ -32,7 +32,7 @@
 		<property name="hbm2ddl.auto">create</property>
 
 		<!--mapping resource="org/hibernate/tutorial/hbm/Event.hbm.xml" -->
-		<mapping resource="dao/Event.hbm.xml" />
+		<mapping resource="entities/Person.hbm.xml" />
 
 	</session-factory>
 
