@@ -37,14 +37,20 @@ import org.hibernate.loader.MultipleBagFetchException;
 import org.hibernate.procedure.UnknownSqlResultSetMappingException;
 import org.hibernate.type.SerializationException;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Bean;
+import org.springframework.orm.hibernate3.LocalSessionFactoryBean;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.fasterxml.classmate.AnnotationConfiguration;
 
 import entities.Person;
+import junit.framework.Test;
 import services.HibernateUtil;
 import dao.Event;
 import org.apache.logging.log4j.Logger;
 import org.apache.logging.log4j.LogManager;
+
+//import org.junit.Test;//@Test https://stackoverflow.com/questions/16062910/annotation-type-expected
 
 public class PersonDAO {
 	@Autowired
@@ -56,8 +62,11 @@ public class PersonDAO {
 	/**
 	 * 2.4 of
 	 * http://docs.jboss.org/hibernate/orm/5.2/quickstart/html_single/#hibernate-gsg-tutorial-basic-config
+	 * 
+	 * http://www.baeldung.com/hibernate-mappingexception-unknown-entity
 	 */
-	SessionFactory sessionFactory = null;
+	@Autowired
+	private SessionFactory sessionFactory;
 
 	/**
 	 * Define a static logger variable so that it references the Logger instance
@@ -104,11 +113,11 @@ public class PersonDAO {
 			System.out.println("lbl7476 start in try");
 			// sessionFactory = new
 			// MetadataSources(registry).buildMetadata().buildSessionFactory();
-			MetadataSources ms = new MetadataSources(registry);
+			//MetadataSources ms = new MetadataSources(registry);
 			System.out.println("lbl7477 in try");
-			Metadata bm = ms.buildMetadata();
+			//Metadata bm = ms.buildMetadata();
 			System.out.println("lbl7478 in try");
-			sessionFactory = bm.buildSessionFactory();
+			// sessionFactory = bm.buildSessionFactory();
 			// sessionFactory = HibernateUtil.getSessionFactory();
 			/**
 			 * https://stackoverflow.com/questions/14495088/hibernate-properties-not-found
@@ -119,18 +128,19 @@ public class PersonDAO {
 			Session session = sessionFactory.openSession();
 			System.out.println("lbl7485 in try");
 
-			session.beginTransaction();
+		//	session.beginTransaction();
 			System.out.println("lbl7490 in try");
 
 			// session.save(new Event("Our very first eventVALUED1!", new Date()));
-			session.save(this.getEventVALUED1());
+			// session.save(this.getEventVALUED1());
 			System.out.println("lbl7495 in try");
 
 			// session.save(new Event("A follow up eventVALUED1", new Date()));
-			session.save(this.getEventVALUED2());
+			// session.save(this.getEventVALUED2());
+	//		session.save(personn);
 			System.out.println("lbl7500 in try");
 
-			session.getTransaction().commit();
+	//		session.getTransaction().commit();
 			System.out.println("lbl7550 in try");
 
 			session.close();
@@ -294,7 +304,7 @@ public class PersonDAO {
 			StandardServiceRegistryBuilder.destroy(registry);
 
 			// System.out.println("savePerson KO");
-			logger.error("savePerson KO");
+			logger.error("Exception e savePerson KO");
 			/**
 			 * https://stackoverflow.com/questions/37896398/java-hibernate-throws-exception-at-boot
 			 */
@@ -326,6 +336,18 @@ public class PersonDAO {
 
 	public void savePersonsCollection(List<Person> personsCollection) {
 
+	}
+
+	/**
+	 * http://www.baeldung.com/hibernate-mappingexception-unknown-entity
+	 * 
+	 * @return
+	 */
+	@Bean
+	public LocalSessionFactoryBean sessionFactory() {
+		LocalSessionFactoryBean sessionFactory = new LocalSessionFactoryBean();
+		// sessionFactory.setDataSource(restDataSource());
+		return sessionFactory;
 	}
 
 }

@@ -11,12 +11,12 @@
 <!-- <hibernate-mapping package="org.hibernate.tutorial.hbm"> -->
 <hibernate-mapping package="entities">
 
-	<class name="Person" >
-		<id name="id" column="ID">
-			<generator class="increment" />
-		</id>
-		<property name="nom" type="timestamp" column="EVENT_DATE" />
-		<property name="anneeNaissance" type="timestamp" />
-	</class>
+<!-- 	<class name="Person"> -->
+<!-- 		<id name="id" column="ID"> -->
+<!-- 			<generator class="increment" /> -->
+<!-- 		</id> -->
+<!-- 		<property name="nom" type="timestamp" column="EVENT_DATE" /> -->
+<!-- 		<property name="anneeNaissance" type="timestamp" /> -->
+<!-- 	</class> -->
 
 </hibernate-mapping>

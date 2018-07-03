@@ -8,6 +8,7 @@ import javax.persistence.metamodel.StaticMetamodel;
 @StaticMetamodel(Match.class)
 public abstract class Match_ {
 
+	public static volatile SingularAttribute<Match, Person> personne;
 	public static volatile SingularAttribute<Match, Integer> id;
 	public static volatile SingularAttribute<Match, String> lieu;
 

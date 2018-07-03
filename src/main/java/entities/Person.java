@@ -1,12 +1,15 @@
 package entities;
 
-import javax.persistence.Entity;
+import java.io.Serializable;
+
+import  javax.persistence.Entity;
 import javax.persistence.Id;
 
 import org.hibernate.annotations.GenericGenerator;
 
 @Entity
-public class Person {
+public class Person implements Serializable {
+	//:http://www.baeldung.com/hibernate-mappingexception-unknown-entity
 
 	// public void Person(Integer anneeNaissance) {
 	//
