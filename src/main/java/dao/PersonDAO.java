@@ -125,10 +125,11 @@ public class PersonDAO {
 			// Configuration configuration = new
 			// AnnotationConfiguration().configure().buildSessionFactory();
 			System.out.println("lbl7480 in try");
+	//
 			Session session = sessionFactory.openSession();
 			System.out.println("lbl7485 in try");
 
-		//	session.beginTransaction();
+	//		session.beginTransaction();
 			System.out.println("lbl7490 in try");
 
 			// session.save(new Event("Our very first eventVALUED1!", new Date()));
@@ -143,7 +144,7 @@ public class PersonDAO {
 	//		session.getTransaction().commit();
 			System.out.println("lbl7550 in try");
 
-			session.close();
+	//		session.close();
 			System.out.println("lbl7600 end in try");
 		} catch (AuditException e) {
 			/**

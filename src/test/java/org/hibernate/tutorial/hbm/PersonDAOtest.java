@@ -43,8 +43,9 @@ public class PersonDAOtest {
 		assertNotNull(pd);
 	}
 
+	
+//	@Transactional
 	@Test()
-	@Transactional
 	public void savePersonTest() {
 		Person p = new Person();
 		p.setNom("Peter");
