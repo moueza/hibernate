@@ -63,7 +63,7 @@ public class Main {
 		logger.trace("lbl r09");
 		logger.error("lbl r10");
 
-		System.out.println(this.getPersonVALUED().getAnneeNaissance());
+		//System.out.println(this.getPersonVALUED().getAnneeNaissance());
 
 		System.out.println("lbl r20");
 

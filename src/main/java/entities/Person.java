@@ -17,34 +17,24 @@ public class Person implements Serializable {
 
 	Integer id;
 
-	Integer anneeNaissance;
+//	Integer anneeNaissance;
 	String nom;
-	String prenom;
+//	String prenom;
 
 	public Person() {
 	}
 
-	public Person(String nomm, int anneeNaiss) {
-		nom = nomm;
-		anneeNaissance = anneeNaiss;
-	}
+//	public Person(String nomm, int anneeNaiss) {
+//		nom = nomm;
+//		anneeNaissance = anneeNaiss;
+//	}
 
-	public Integer getAnneeNaissance() {
-		return anneeNaissance;
-	}
-
-	@Id
+		@Id
 	public Integer getId() {
 		return id;
 	}
 
-	public void setId(Integer id) {
-		this.id = id;
-	}
-
-	public void setAnneeNaissance(Integer anneeNaissance) {
-		this.anneeNaissance = anneeNaissance;
-	}
+//
 
 	public String getNom() {
 		return nom;
@@ -54,12 +44,9 @@ public class Person implements Serializable {
 		this.nom = nom;
 	}
 
-	public String getPrenom() {
-		return prenom;
-	}
-
-	public void setPrenom(String prenom) {
-		this.prenom = prenom;
+	@Id
+	public void setId(Integer id) {
+		this.id = id;
 	}
 
 	public String printAlea() {

@@ -65,7 +65,7 @@ public class PersonDAO {
 	 * 
 	 * http://www.baeldung.com/hibernate-mappingexception-unknown-entity
 	 */
-	@Autowired
+	// @Autowired
 	private SessionFactory sessionFactory;
 
 	/**
@@ -83,8 +83,8 @@ public class PersonDAO {
 
 	public static void main(String[] args) {
 		Person p = new Person();
-		p.setNom("Peter");
-		p.setAnneeNaissance(1903);
+		// p.setNom("Peter");
+		// p.setAnneeNaissance(1903);
 
 		PersonDAO personDAO = new PersonDAO();
 		personDAO.savePerson(p);
@@ -103,19 +103,19 @@ public class PersonDAO {
 		 * https://docs.jboss.org/hibernate/orm/5.2/quickstart/html_single<BR>
 		 * A SessionFactory is set up once for an application!
 		 */
-		final StandardServiceRegistry registry = new StandardServiceRegistryBuilder().configure()
-				// configures settings
-				// from
-				// hibernate.cfg.xml
-				.build();
+		final StandardServiceRegistry registry = new StandardServiceRegistryBuilder().configure().build();
+		// configures settings
+		// from
+		// hibernate.cfg.xml
+
 		try {
 			logger.error("in try");
 			System.out.println("lbl7476 start in try");
-			// sessionFactory = new
-			// MetadataSources(registry).buildMetadata().buildSessionFactory();
-			//MetadataSources ms = new MetadataSources(registry);
+			sessionFactory = new MetadataSources(registry).buildMetadata().buildSessionFactory();
+			// MetadataSources ms = new MetadataSources(registry);
 			System.out.println("lbl7477 in try");
-			//Metadata bm = ms.buildMetadata();
+			// Metadata bm = ms.buildMetadata();
+
 			System.out.println("lbl7478 in try");
 			// sessionFactory = bm.buildSessionFactory();
 			// sessionFactory = HibernateUtil.getSessionFactory();
@@ -125,11 +125,11 @@ public class PersonDAO {
 			// Configuration configuration = new
 			// AnnotationConfiguration().configure().buildSessionFactory();
 			System.out.println("lbl7480 in try");
-	//
+			//
 			Session session = sessionFactory.openSession();
-			System.out.println("lbl7485 in try");
+			System.out.println("lbl7485 in try " + session);
 
-	//		session.beginTransaction();
+			session.beginTransaction();
 			System.out.println("lbl7490 in try");
 
 			// session.save(new Event("Our very first eventVALUED1!", new Date()));
@@ -138,14 +138,15 @@ public class PersonDAO {
 
 			// session.save(new Event("A follow up eventVALUED1", new Date()));
 			// session.save(this.getEventVALUED2());
-	//		session.save(personn);
+			// session.save(personn);
 			System.out.println("lbl7500 in try");
 
-	//		session.getTransaction().commit();
+			session.getTransaction().commit();
 			System.out.println("lbl7550 in try");
 
-	//		session.close();
+			session.close();
 			System.out.println("lbl7600 end in try");
+
 		} catch (AuditException e) {
 			/**
 			 * https://docs.jboss.org/hibernate/orm/3.5/api/org/hibernate/HibernateException.html
@@ -312,6 +313,7 @@ public class PersonDAO {
 			throw new RuntimeException(e);
 
 		}
+
 	}
 
 	public Event getEventVALUED1() {

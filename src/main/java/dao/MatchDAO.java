@@ -92,7 +92,11 @@ public class MatchDAO {
 		EntityManager entityManager = m.sf.createEntityManager();
 		entityManager.getTransaction().begin();
 
-		Person p = new Person("MOUEZA", 1903);
+		// Person p = new Person("MOUEZA", 1903);
+		Person p = new Person();
+		//p.setNom("MOUEZA");
+		//p.setAnneeNaissance(1903);
+
 		Match match = new Match();
 		entityManager.persist(match);
 

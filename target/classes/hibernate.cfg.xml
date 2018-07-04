@@ -9,6 +9,8 @@
 <hibernate-configuration>
 
 	<session-factory>
+		<!-- http://www.mkyong.com/struts2/struts-2-hibernate-integration-example/ -->
+		<property name="hibernate.bytecode.use_reflection_optimizer">false</property>
 
 		<!-- Database connection settings -->
 		<property name="connection.driver_class">com.mysql.jdbc.Driver</property>
@@ -19,8 +21,8 @@
 		<!-- JDBC connection pool (use the built-in) -->
 		<property name="connection.pool_size">1</property>
 
-		<!-- SQL dialect -->
-		<property name="dialect">org.hibernate.dialect.MySQL5Dialect</property>
+		<!-- SQL dialect MySQL5Dialect -->
+		<property name="dialect">org.hibernate.dialect.MySQLDialect</property>
 
 		<!-- Disable the second-level cache -->
 		<property name="cache.provider_class">org.hibernate.cache.internal.NoCacheProvider</property>
@@ -31,8 +33,13 @@
 		<!-- Drop and re-create the database schema on startup -->
 		<property name="hbm2ddl.auto">create</property>
 
+
+		<!-- http://www.mkyong.com/struts2/struts-2-hibernate-integration-example/ -->
+		<property name="format_sql">true</property>
+		<property name="use_sql_comments">true</property>
+
 		<!--mapping resource="org/hibernate/tutorial/hbm/Event.hbm.xml" -->
-		<mapping resource="entities/Person.hbm.xml" />
+<!-- 		<mapping resource="Person.hbm.xml" /> -->
 
 	</session-factory>
 
