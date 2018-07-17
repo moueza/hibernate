@@ -56,6 +56,7 @@ public class NativeApiIllustrationTest extends TestCase {
 			// building the SessionFactory
 			// so destroy it manually.
 			StandardServiceRegistryBuilder.destroy(registry);
+			System.out.println("lbl475 Exception");
 		}
 	}
 
