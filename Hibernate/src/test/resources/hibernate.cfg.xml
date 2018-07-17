@@ -22,8 +22,11 @@
         <!-- JDBC connection pool (use the built-in) -->
         <property name="connection.pool_size">1</property>
 
-        <!-- SQL dialect -->
-        <property name="dialect">org.hibernate.dialect.H2Dialect</property>
+        <!-- SQL dialect  https://docs.jboss.org/hibernate/orm/3.3/reference/en/html/session-configuration.html#configuration-optional-dialects 
+        org.hibernate.dialect.MySQLDialect 
+         org.hibernate.dialect.MySQLMyISAMDialect 
+         org.hibernate.dialect.H2Dialect -->
+        <property name="dialect">org.hibernate.dialect.MySQLDialect</property>
 
         <!-- Disable the second-level cache  -->
         <property name="cache.provider_class">org.hibernate.cache.internal.NoCacheProvider</property>
