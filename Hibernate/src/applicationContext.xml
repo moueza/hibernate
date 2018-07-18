@@ -12,7 +12,7 @@
 
 
 
-	<bean id="person" class="entities.Person" autowire="byName" scope="prototype" />
+	<bean id="person" class="org.hibernate.tutorial.hbm.Person" autowire="byName" scope="prototype" />
 
 	<!-- <bean id="personVALUED" class="entities.Person" autowire="byName" -->
 	<!-- scope="prototype"> -->
@@ -26,10 +26,10 @@
 
 	<bean id="personDAO" class="dao.PersonDAO" scope="singleton" />
 
-	<bean id="personVALUED" class="entities.Person" scope="prototype">
+	<bean id="personVALUED" class="org.hibernate.tutorial.hbm.Person" scope="prototype">
 		<property name="age" value="18"></property>
 	</bean>
-	<bean id="personVALUED1" class="entities.Person" scope="prototype">
+	<bean id="personVALUED1" class="org.hibernate.tutorial.hbm.Person" scope="prototype">
 		<property name="age" value="20"></property>
 	</bean>
 

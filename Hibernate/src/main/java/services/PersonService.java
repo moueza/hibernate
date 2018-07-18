@@ -2,7 +2,7 @@ package services;
 
 import java.util.List;
 
-import entities.Person;
+import org.hibernate.tutorial.hbm.Person;
 
 public interface PersonService {
 	public void savePerson(Person personn);

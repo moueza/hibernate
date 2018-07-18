@@ -34,6 +34,9 @@
 		<property name="hbm2ddl.auto">create</property>
 
 		<mapping resource="org/hibernate/tutorial/hbm/Event.hbm.xml" />
+		<mapping resource="org/hibernate/tutorial/hbm/Event2.hbm.xml" />
+
+		<!-- <mapping resource="org/hibernate/tutorial/hbm/Person.hbm.xml" /> -->
 
 	</session-factory>
 

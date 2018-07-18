@@ -1,6 +1,9 @@
-package entities;
+package org.hibernate.tutorial.hbm;
 
 public class Person {
+	Integer id;
+
+
 	
 
 	// public void Person(Integer age) {
@@ -9,7 +12,16 @@ public class Person {
 	String name;
 	Integer birthYear;
 	Integer age;
+	
+	
+	
+	public Integer getId() {
+		return id;
+	}
 
+	public void setId(Integer id) {
+		this.id = id;
+	}
 	public String getName() {
 		return name;
 	}

@@ -2,10 +2,10 @@ package services;
 
 import java.util.List;
 
+import org.hibernate.tutorial.hbm.Person;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import dao.PersonDAO;
-import entities.Person;
 
 public class PersonneServiceImpl implements PersonService {
 	@Autowired

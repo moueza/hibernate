@@ -35,12 +35,12 @@ import org.hibernate.jdbc.BatchFailedException;
 import org.hibernate.jdbc.TooManyRowsAffectedException;
 import org.hibernate.loader.MultipleBagFetchException;
 import org.hibernate.procedure.UnknownSqlResultSetMappingException;
+import org.hibernate.tutorial.hbm.Person;
 import org.hibernate.type.SerializationException;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import com.fasterxml.classmate.AnnotationConfiguration;
 
-import entities.Person;
 import services.HibernateUtil;
 import dao.Event;
 import org.apache.logging.log4j.Logger;

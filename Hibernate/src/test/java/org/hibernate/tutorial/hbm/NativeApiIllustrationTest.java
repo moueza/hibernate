@@ -74,6 +74,9 @@ public class NativeApiIllustrationTest extends TestCase {
 		session.beginTransaction();
 		session.save(new Event("Our very first event!", new Date()));
 		session.save(new Event("A follow up event", new Date()));
+		
+		session.save(new Event2("Our very first event 2222!", new Date(),2200));
+		session.save(new Event2("A follow up event 22222", new Date(),222));
 		session.getTransaction().commit();
 		session.close();
 

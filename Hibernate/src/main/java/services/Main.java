@@ -2,6 +2,7 @@ package services;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.hibernate.tutorial.hbm.Person;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.ApplicationContext;
@@ -12,7 +13,6 @@ import com.acme.PersonManager;
 import com.my.BarClass;
 
 import dao.LoggerMoi;
-import entities.Person;
 import services.*;
 
 public class Main {

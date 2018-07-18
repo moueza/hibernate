@@ -10,12 +10,13 @@
 <hibernate-mapping
 	package="org.hibernate.tutorial.hbm">
 
-	<class name="Event" table="EVENTS">
+	<class name="Event2" table="EVENTS2">
 		<id name="id" column="EVENT_ID">
 			<generator class="increment" />
 		</id>
 		<property name="date" type="timestamp" column="EVENT_DATE" />
 		<property name="title" />
+		<property name="integ" />
 	</class>
 
 
