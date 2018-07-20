@@ -23,6 +23,7 @@
  */
 package org.hibernate.tutorial.hbm;
 
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -82,16 +83,18 @@ public class NativeApiIllustrationTest extends TestCase {
 		person22.setBirthYear(100);
 		session.save(person22);
 
-		
-//		session.getTransaction().commit();
-//		session.close();
-//		
-//		
-//		 session = sessionFactory.openSession();
-//		session.beginTransaction();
-	//	Match2 match = new Match2();
+		// session.getTransaction().commit();
+		// session.close();
+		//
+		//
+		// session = sessionFactory.openSession();
+		// session.beginTransaction();
+		// Match2 match = new Match2();
 		Match2 match2 = new Match2("GARROS");
-	//	match.setNamee2("Lenglen");
+		List joueursCollection = new ArrayList<Person2>();
+		joueursCollection.add(new Person2("DUPONT"));
+		// match.setNamee2("Lenglen");
+		match2.setJoueurs(joueursCollection);
 		session.save(match2);
 		session.getTransaction().commit();
 		session.close();
