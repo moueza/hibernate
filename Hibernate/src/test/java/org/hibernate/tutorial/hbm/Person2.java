@@ -4,13 +4,22 @@ public class Person2 {
 	Integer id;
 
 	String namee;
-	
+
+	Integer birthYear;
 
 	public Person2() {
 	}
 
 	public Person2(String string) {
 		this.namee = string;
+	}
+
+	public Integer getBirthYear() {
+		return birthYear;
+	}
+
+	public void setBirthYear(Integer birthYear) {
+		this.birthYear = birthYear;
 	}
 
 	public Integer getId() {
@@ -20,9 +29,6 @@ public class Person2 {
 	public void setId(Integer id) {
 		this.id = id;
 	}
-
-	
-
 
 	public String getNamee() {
 		return namee;

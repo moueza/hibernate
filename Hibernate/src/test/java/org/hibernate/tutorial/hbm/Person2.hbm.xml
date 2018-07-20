@@ -15,6 +15,7 @@
 			<generator class="increment" />
 		</id>
 		<property name="namee" />
+		<property name="birthYear" />
 	</class>
 
 </hibernate-mapping>
