@@ -32,6 +32,22 @@ public class Event2 {
 	private Date date;
 	Integer integ;
 
+
+	
+	public Event2() {
+		// this form used by Hibernate
+	}
+	
+	
+	public Event2(String title, Date date,Integer integg) {
+		// for application use, to create new events
+		this.title = title;
+		this.date = date;
+		this.integ=integg;
+	}
+	
+
+	
 	public Integer getInteg() {
 		return integ;
 	}
@@ -40,16 +56,8 @@ public class Event2 {
 		this.integ = integ;
 	}
 
-	public Event2() {
-		// this form used by Hibernate
-	}
 
-	public Event2(String title, Date date,Integer integg) {
-		// for application use, to create new events
-		this.title = title;
-		this.date = date;
-		this.integ=integg;
-	}
+	
 
 	public Long getId() {
 		return id;

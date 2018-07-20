@@ -3,15 +3,14 @@ package org.hibernate.tutorial.hbm;
 public class Person2 {
 	Integer id;
 
-	// public void Person(Integer age) {
-	//
-	// }
-	String name;
-	Integer birthYear;
-	Integer age;
+	String namee;
+	
+
+	public Person2() {
+	}
 
 	public Person2(String string) {
-		this.name = string;
+		this.namee = string;
 	}
 
 	public Integer getId() {
@@ -22,28 +21,15 @@ public class Person2 {
 		this.id = id;
 	}
 
-	public String getName() {
-		return name;
+	
+
+
+	public String getNamee() {
+		return namee;
 	}
 
-	public void setName(String name) {
-		this.name = name;
-	}
-
-	public Integer getBirthYear() {
-		return birthYear;
-	}
-
-	public void setBirthYear(Integer birthYear) {
-		this.birthYear = birthYear;
-	}
-
-	public Integer getAge() {
-		return age;
-	}
-
-	public void setAge(Integer age) {
-		this.age = age;
+	public void setNamee(String namee) {
+		this.namee = namee;
 	}
 
 	public String printAlea() {

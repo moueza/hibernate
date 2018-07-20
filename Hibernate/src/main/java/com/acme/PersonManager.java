@@ -2,7 +2,7 @@ package com.acme;
 
 /**
  * Renaming Acegi Security to Spring Security
- * https://spring.io/blog/2007/01/25/why-the-name-acegi TODO bean Entity
+ * https://spring.io/blog/2007/01/25/why-the-namee-acegi TODO bean Entity
  */
 public class PersonManager {
 	Integer cpt;
