@@ -8,15 +8,16 @@
         "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 
 <!-- <hibernate-mapping package="org.hibernate.tutorial.hbm"> -->
-<hibernate-mapping package="org.hibernate.tutorial.hbm">
+<hibernate-mapping
+	package="org.hibernate.tutorial.hbm">
 
 	<class name="Person">
 		<id name="id">
 			<generator class="increment" />
 		</id>
 		<property name="name" />
-		<property name="birthYear"  type="integer" />
-		<property name="age"  type="integer"/>
+		<property name="birthYear" type="integer" />
+		<property name="age" type="integer" />
 	</class>
 
 </hibernate-mapping>

@@ -35,9 +35,10 @@
 
 		<mapping resource="org/hibernate/tutorial/hbm/Event.hbm.xml" />
 		<mapping resource="org/hibernate/tutorial/hbm/Event2.hbm.xml" />
-
+	<mapping resource="org/hibernate/tutorial/hbm/Person3.hbm.xml" />
+	
 		<!-- <mapping resource="org/hibernate/tutorial/hbm/Person.hbm.xml" /> -->
-
+		<mapping resource="org/hibernate/tutorial/hbm/Person2.hbm.xml" />
 	</session-factory>
 
 </hibernate-configuration>

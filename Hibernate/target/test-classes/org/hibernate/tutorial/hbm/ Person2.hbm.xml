@@ -11,8 +11,8 @@
 <hibernate-mapping
 	package="org.hibernate.tutorial.hbm">
 
-	<class name="Person">
-		<id name="id">
+	<class name="Person2" table="PERSON2">
+		<id name="id"  column="PERSON2_ID">
 			<generator class="increment" />
 		</id>
 		<property name="name" />

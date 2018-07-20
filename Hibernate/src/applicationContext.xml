@@ -29,6 +29,7 @@
 	<bean id="personVALUED" class="org.hibernate.tutorial.hbm.Person" scope="prototype">
 		<property name="age" value="18"></property>
 	</bean>
+
 	<bean id="personVALUED1" class="org.hibernate.tutorial.hbm.Person" scope="prototype">
 		<property name="age" value="20"></property>
 	</bean>
