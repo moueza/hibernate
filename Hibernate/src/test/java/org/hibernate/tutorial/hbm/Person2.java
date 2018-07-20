@@ -1,10 +1,26 @@
 package org.hibernate.tutorial.hbm;
 
-public class Person2 {
-	Integer id;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 
+/**
+ * 56
+ * http://docs.jboss.org/hibernate/orm/5.2/userguide/html_single/Hibernate_User_Guide.html#configurations-hbmddl
+ */
+@Entity(name = "Person2")
+public class Person2 {
+	/**https://stackoverflow.com/questions/16142071/hibernate-ids-for-this-class-must-be-manually-assigned-before-calling-save*/
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY) 
+	   Integer id;
+
+	 @Column(name = "`namee`")
 	String namee;
 
+	 @Column(name = "`birthyear`")
 	Integer birthYear;
 
 	public Person2() {
