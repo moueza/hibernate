@@ -42,7 +42,7 @@
 			https://stackoverflow.com/questions/9980645/hibernate-unknown-entity-not-missing-entity-or-import-javax-persistence-entity -->
 		<mapping class="org.hibernate.tutorial.hbm.Person2" />
 		<!-- <mapping package="org.hibernate.tutorial.hbm"/> -->
-		<mapping class="org.hibernate.tutorial.hbm.Match" />
+		<mapping class="org.hibernate.tutorial.hbm.Match2" />
 	</session-factory>
 
 </hibernate-configuration>

@@ -83,15 +83,16 @@ public class NativeApiIllustrationTest extends TestCase {
 		session.save(person22);
 
 		
-		session.getTransaction().commit();
-		session.close();
-		
-		
-		 session = sessionFactory.openSession();
-		session.beginTransaction();
-		Match match = new Match();
-		match.setNamee("Lenglen");
-		session.save(match);
+//		session.getTransaction().commit();
+//		session.close();
+//		
+//		
+//		 session = sessionFactory.openSession();
+//		session.beginTransaction();
+	//	Match2 match = new Match2();
+		Match2 match2 = new Match2("GARROS");
+	//	match.setNamee2("Lenglen");
+		session.save(match2);
 		session.getTransaction().commit();
 		session.close();
 
