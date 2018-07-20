@@ -82,6 +82,16 @@ public class NativeApiIllustrationTest extends TestCase {
 		person22.setBirthYear(100);
 		session.save(person22);
 
+		
+		session.getTransaction().commit();
+		session.close();
+		
+		
+		 session = sessionFactory.openSession();
+		session.beginTransaction();
+		Match match = new Match();
+		match.setNamee("Lenglen");
+		session.save(match);
 		session.getTransaction().commit();
 		session.close();
 
