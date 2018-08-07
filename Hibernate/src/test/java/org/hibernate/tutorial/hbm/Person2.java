@@ -16,13 +16,14 @@ public class Person2 {
 	 * 
 	 * 170 http://docs.jboss.org/hibernate/orm/5.2/userguide/html_single/Hibernate_User_Guide.html#naturalid-api*/
 	@Id
+	@Column(name = "`idperson2`")
 	@GeneratedValue(strategy = GenerationType.IDENTITY) 
 	   Integer id;
 
-	 @Column(name = "`namee`")
+ @Column(name = "`orderidfk`")
 	String namee;
 
-	 @Column(name = "`birthyear`")
+@Column(name = "`birthyear`")
 	Integer birthYear;
 
 	public Person2() {

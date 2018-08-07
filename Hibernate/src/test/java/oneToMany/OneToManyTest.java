@@ -21,7 +21,7 @@
  * 51 Franklin Street, Fifth Floor
  * Boston, MA  02110-1301  USA
  */
-package org.hibernate.tutorial.hbm;
+package oneToMany;
 
 import java.util.ArrayList;
 import java.util.Date;
@@ -38,9 +38,12 @@ import junit.framework.TestCase;
 /**
  * Illustrates use of Hibernate native APIs.
  *
- * @author Steve Ebersole
+ * @author Peter MOUEZA
+ * 
+ * https://blog.moove-it.com/jpa-onetomany-i-need-fk-child-table/
+ * Option 2
  */
-public class NativeApiIllustrationTest extends TestCase {
+public class OneToManyTest extends TestCase {
 	private SessionFactory sessionFactory;
 
 	@Override
@@ -70,44 +73,21 @@ public class NativeApiIllustrationTest extends TestCase {
 
 	@SuppressWarnings("unchecked")
 	public void testBasicUsage() {
-		// create a couple of events...
 		Session session = sessionFactory.openSession();
 		session.beginTransaction();
-		session.save(new Event("Our very first event!", new Date()));
 
-		session.save(new Event2("Our very first event 2222!", new Date(), 2200));
-		session.save(new Person3("A follow up event 22222", new Date(), 222));
-
-		session.save(new Person2("DUPONT"));
-		Person2 person22 = new Person2();
-		person22.setBirthYear(100);
-		session.save(person22);
-
-		// session.getTransaction().commit();
-		// session.close();
-		//
-		//
-		// session = sessionFactory.openSession();
-		// session.beginTransaction();
-		// Match2 match = new Match2();
-		Match2 match2 = new Match2("GARROS");
-		List joueursCollection = new ArrayList<Person2>();
-		joueursCollection.add(new Person2("DUPONT"));
-		// match.setNamee2("Lenglen");
-		//match2.setJoueurs(joueursCollection);
-		match2.setJoueur1(new Person2("DUPONT"));
-		//session.save(match2);
+		
+		 
+		
+		
+		Phone phone = new Phone();
+		//session.save(phone);
+		
+		
+		
+		
 		session.getTransaction().commit();
 		session.close();
 
-		// now lets pull events from the database and list them
-		session = sessionFactory.openSession();
-		session.beginTransaction();
-		List result = session.createQuery("from Event").list();
-		for (Event event : (List<Event>) result) {
-			System.out.println("Event (" + event.getDate() + ") : " + event.getTitle());
-		}
-		session.getTransaction().commit();
-		session.close();
-	}
+	 	}
 }

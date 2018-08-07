@@ -31,18 +31,21 @@
 		<property name="show_sql">true</property>
 
 		<!-- Drop and re-create the database schema on startup -->
-		<property name="hbm2ddl.auto">create</property>
+<!-- 		<property name="hbm2ddl.auto">create</property> -->
+	<property name="hbm2ddl.auto">update</property>
 
-		<mapping resource="org/hibernate/tutorial/hbm/Event.hbm.xml" />
-		<mapping resource="org/hibernate/tutorial/hbm/Event2.hbm.xml" />
-		<mapping resource="org/hibernate/tutorial/hbm/Person3.hbm.xml" />
+
+<!-- 		<mapping resource="org/hibernate/tutorial/hbm/Event.hbm.xml" /> -->
+<!-- 		<mapping resource="org/hibernate/tutorial/hbm/Event2.hbm.xml" /> -->
+<!-- 		<mapping resource="org/hibernate/tutorial/hbm/Person3.hbm.xml" /> -->
 
 		<!-- <mapping resource="org/hibernate/tutorial/hbm/Person.hbm.xml" /> -->
 		<!-- <mapping resource="org/hibernate/tutorial/hbm/Person2.hbm.xml" /> 
 			https://stackoverflow.com/questions/9980645/hibernate-unknown-entity-not-missing-entity-or-import-javax-persistence-entity -->
-		<mapping class="org.hibernate.tutorial.hbm.Person2" />
+<!-- 		<mapping class="org.hibernate.tutorial.hbm.Person2" /> -->
 		<!-- <mapping package="org.hibernate.tutorial.hbm"/> -->
-		<mapping class="org.hibernate.tutorial.hbm.Match2" />
+<!-- 		<mapping class="org.hibernate.tutorial.hbm.Match2" /> -->
+	<mapping class="oneToMany.Phone" /> 
 	</session-factory>
 
 </hibernate-configuration>
