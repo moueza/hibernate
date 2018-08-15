@@ -1,4 +1,4 @@
-package oneToMany;
+package entities;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -14,6 +14,10 @@ public class Phone {
 	@Id
 	private Long id;
 	private String phoneNumber;
+
+	public Phone(String stringPhone) {
+		phoneNumber = stringPhone;
+	}
 
 	public Long getId() {
 		return id;
