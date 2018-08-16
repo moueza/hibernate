@@ -37,7 +37,7 @@ public class Exec2 {
 		em.remove(p);
 		tx.commit();
 
-		Phone p4 = em.find(Phone.class, 2);
+		Phone p4 = em.find(Phone.class, 1);
 		System.out.println(p4);
 		// p4.setNom("Nouveau");
 
