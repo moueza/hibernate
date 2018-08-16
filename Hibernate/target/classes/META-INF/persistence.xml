@@ -2,7 +2,7 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.1"
 	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
 	<!-- Define persistence unit -->
-	<persistence-unit name="jpa">
+	<persistence-unit name="jpa"  transaction-type="RESOURCE_LOCAL">
 		<description>JpaForBeginners</description>
 		<provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
 		<exclude-unlisted-classes>false</exclude-unlisted-classes>
@@ -12,16 +12,18 @@
 		
 			<!-- database connection -->
 		<property name="hibernate.connection.driver_class" value="com.mysql.jdbc.Driver" />
-<!-- 		?autoReconnect=true&useSSL=false  https://stackoverflow.com/questions/42768265/unable-to-create-requested-service-org-hibernate-engine-jdbc-env-spi-jdbcenvir -->
 			<property name="hibernate.connection.url" value="jdbc:mysql://localhost:3306/monexemplejpa" />
 			<property name="connection.username" value="root" />
 			<property name="connection.password" value="root" />
 
 			<!-- configure logging -->
-			<property name="eclipselink.logging.level" value="INFO" />
-			<property name="eclipselink.logging.level.sql" value="FINE" />
-			<property name="eclipselink.logging.parameters" value="true" />
+<!-- 			<property name="eclipselink.logging.level" value="INFO" /> -->
+<!-- 			<property name="eclipselink.logging.level.sql" value="FINE" /> -->
+<!-- 			<property name="eclipselink.logging.parameters" value="true" /> -->
 			
+	<!-- 			<property name="hibernate.show_sql" value="true" /> -->
+<!-- 			<property name="hibernate.format_sql" value="true" /> -->
+<!-- 			<property name="use_sql_comments" value="true" /> -->
 			
 			<property name="hibernate.hbm2ddl.auto" value="create" />
 			<!-- Dialecte -->
