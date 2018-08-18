@@ -11,11 +11,16 @@
 		<property name="hibernate.archive.autodetection" value="class, hbm" />
 		
 			<!-- database connection -->
-		<property name="hibernate.connection.driver_class" value="com.mysql.jdbc.Driver" />
-			<property name="hibernate.connection.url" value="jdbc:mysql://localhost:3306/monexemplejpa" />
-			<property name="connection.username" value="root" />
-			<property name="connection.password" value="root" />
-
+<!-- 		<property name="hibernate.connection.driver_class" value="com.mysql.cj.jdbc.Driver" /> -->
+<!-- 			<property name="hibernate.connection.url" value="jdbc:mysql://localhost:3306/monexemplejpa" /> -->
+<!-- 			<property name="connection.username" value="root" /> -->
+<!-- 			<property name="connection.password" value="root" /> -->
+	<property name="hibernate.connection.driver_class" value="com.mysql.jdbc.Driver" />
+			<property name="hibernate.connection.url" value="jdbc:mysql://localhost:3306/monexemplejpa2" />
+			<property name="hibernate.connection.username" value="root" />
+			<property name="hibernate.connection.password" value="root" />
+		
+		
 			<!-- configure logging -->
 <!-- 			<property name="eclipselink.logging.level" value="INFO" /> -->
 <!-- 			<property name="eclipselink.logging.level.sql" value="FINE" /> -->
