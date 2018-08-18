@@ -12,6 +12,10 @@ import antlr.collections.List;
 /** https://blog.moove-it.com/jpa-onetomany-i-need-fk-child-table/ */
 @Entity
 public class PhoneList {
+	private Long id;
+	private String name;
+	private String description;
+	private List phones;
 
 	public String getName() {
 		return name;
@@ -33,10 +37,6 @@ public class PhoneList {
 		this.phones = phones;
 	}
 
-	private Long id;
-	private String name;
-	private String description;
-	private List phones;
 
 	@Id
 	@GeneratedValue
