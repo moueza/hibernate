@@ -1,5 +1,8 @@
 package entities;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -7,7 +10,6 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 
-import antlr.collections.List;
 
 /** https://blog.moove-it.com/jpa-onetomany-i-need-fk-child-table/ */
 @Entity
@@ -15,7 +17,8 @@ public class PhoneList {
 	private Long id;
 	private String name;
 	private String description;
-	private List phones;
+	private List<Phone> phones = new ArrayList();// Example 172
+													// http://docs.jboss.org/hibernate/orm/5.2/userguide/html_single/Hibernate_User_Guide.html#associations-one-to-many
 
 	public String getName() {
 		return name;
@@ -37,7 +40,6 @@ public class PhoneList {
 		this.phones = phones;
 	}
 
-
 	@Id
 	@GeneratedValue
 	public Long getId() {
@@ -50,7 +52,7 @@ public class PhoneList {
 
 	@OneToMany(cascade = CascadeType.ALL)
 	@JoinColumn(name = "phone_list_id", referencedColumnName = "id")
-	public List getPhones() {
+	public List<Phone> getPhones() {
 		return phones;
 	}
 }
