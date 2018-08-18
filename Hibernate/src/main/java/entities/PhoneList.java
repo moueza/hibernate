@@ -17,8 +17,21 @@ public class PhoneList {
 	private Long id;
 	private String name;
 	private String description;
-	private List<Phone> phones = new ArrayList();// Example 172
+	private List<Phone> phonesCollection = new ArrayList();// Example 172
 													// http://docs.jboss.org/hibernate/orm/5.2/userguide/html_single/Hibernate_User_Guide.html#associations-one-to-many
+
+	@Id
+	@GeneratedValue
+	public Long getId() {
+		return id;
+	}
+	
+	
+	@OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
+	@JoinColumn(name = "phone_list_id", referencedColumnName = "id")
+	public List<Phone> getPhonesCollection() {
+		return phonesCollection;
+	}
 
 	public String getName() {
 		return name;
@@ -36,23 +49,17 @@ public class PhoneList {
 		this.description = description;
 	}
 
-	public void setPhones(List phones) {
-		this.phones = phones;
-	}
-
-	@Id
-	@GeneratedValue
-	public Long getId() {
-		return id;
-	}
+	
 
 	public void setId(Long id) {
 		this.id = id;
 	}
 
-	@OneToMany(cascade = CascadeType.ALL)
-	@JoinColumn(name = "phone_list_id", referencedColumnName = "id")
-	public List<Phone> getPhones() {
-		return phones;
+	
+
+	public void setPhonesCollection(List<Phone> phonesCollection) {
+		this.phonesCollection = phonesCollection;
 	}
+
+	
 }

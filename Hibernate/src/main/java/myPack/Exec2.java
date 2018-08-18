@@ -34,6 +34,13 @@ public class Exec2 {
 		em.persist(p);
 		em.persist(p2);
 		em.persist(p3);
+
+		PhoneList pl = new PhoneList();
+		pl.setName("pl");
+		List<Phone> l = new ArrayList<>();
+		l.add(p);
+		pl.setPhonesCollection(l);
+		em.persist(pl);
 		tx.commit();
 
 		tx.begin();
@@ -42,36 +49,27 @@ public class Exec2 {
 		tx.commit();
 
 		Phone p4 = em.find(Phone.class, 2);
-		System.out.println(p4);
+		System.out.println("found tel = " + p4);
 		// p4.setNom("Nouveau");
 
 		System.out.println("");
 
 		List<Phone> list = em.createQuery("select p from Phone p order by p.phoneNumber asc").getResultList();
-		for (Phone personne : list) {
-			System.out.println(personne);
+		for (Phone phonee : list) {
+			System.out.println("retrieved from result"+phonee);
 
 		}
 
 		System.out.println("---------------------------------");
 
-		System.out.println(p);
-		System.out.println(p2);
-		System.out.println(p3);
-		System.out.println(p4);
+//		System.out.println(p);
+//		System.out.println(p2);
+//		System.out.println(p3);
+//		System.out.println(p4);
 
-		tx.begin();
-		em.merge(p);
-		tx.commit();
+//		tx.begin();
+//		em.merge(p);
+//		tx.commit();
 
-		tx.begin();
-		PhoneList pl = new PhoneList();
-		pl.setName("pl");
-		List<Phone> l = new ArrayList<>();
-		l.add(p);
-		pl.setPhones(l);
-		em.persist(pl);
-
-		tx.commit();
 	}
 }

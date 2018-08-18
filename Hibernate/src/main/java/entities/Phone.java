@@ -14,9 +14,7 @@ import javax.persistence.Id;
  */
 @Entity
 public class Phone {
-	@Id
-	@Column(nullable = false)
-	@GeneratedValue(strategy = GenerationType.AUTO)
+
 	private Integer id;
 
 	private String phoneNumber;
@@ -29,6 +27,9 @@ public class Phone {
 		phoneNumber = stringPhone;
 	}
 
+	@Id
+	@Column(nullable = false)
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	public Integer getId() {
 		return id;
 	}
