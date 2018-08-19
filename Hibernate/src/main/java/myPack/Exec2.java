@@ -46,12 +46,12 @@ public class Exec2 {
 		tx.commit();
 
 		tx.begin();
-		l = new ArrayList<>();
-		l.add(p2);
-		l.add(p3);
+		List<Phone> l2 = new ArrayList<>();
+		l2.add(p2);
+		l2.add(p3);
 		PhoneList pl2 = new PhoneList();
-		pl.setPhonesCollection(l);
-		pl.setName("p2");
+		pl2.setPhonesCollection(l2);
+		pl2.setName("p2");
 		em.persist(pl2);
 		tx.commit();
 
@@ -82,9 +82,10 @@ public class Exec2 {
 		// tx.begin();
 		// em.merge(p);
 		// tx.commit();
-		List<PhoneList> phoneListCollection = em.createQuery("select pl from PhoneList pl order by pl.phoneNumber asc").getResultList();
+		List<PhoneList> phoneListCollection = em.createQuery("select pl from PhoneList pl order by pl.name asc")
+				.getResultList();
 		for (PhoneList phonee : phoneListCollection) {
-			System.out.println("retrieved from result" + phonee.getPhonesCollection().get(0));
+			System.out.println("retrieved from result" + phonee.getPhonesCollection().get(0).getPhoneNumber());
 		}
 
 	}
