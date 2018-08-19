@@ -41,6 +41,7 @@ public class Exec2 {
 		l.add(p);
 		pl.setPhonesCollection(l);
 		em.persist(pl);
+		//em.flush();
 		tx.commit();
 
 		tx.begin();
@@ -56,20 +57,20 @@ public class Exec2 {
 
 		List<Phone> list = em.createQuery("select p from Phone p order by p.phoneNumber asc").getResultList();
 		for (Phone phonee : list) {
-			System.out.println("retrieved from result"+phonee);
+			System.out.println("retrieved from result" + phonee);
 
 		}
 
 		System.out.println("---------------------------------");
 
-//		System.out.println(p);
-//		System.out.println(p2);
-//		System.out.println(p3);
-//		System.out.println(p4);
+		// System.out.println(p);
+		// System.out.println(p2);
+		// System.out.println(p3);
+		// System.out.println(p4);
 
-//		tx.begin();
-//		em.merge(p);
-//		tx.commit();
+		// tx.begin();
+		// em.merge(p);
+		// tx.commit();
 
 	}
 }

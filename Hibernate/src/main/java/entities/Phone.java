@@ -1,10 +1,16 @@
 package entities;
 
+import java.util.Date;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
+
+import org.hibernate.annotations.CreationTimestamp;
 
 /**
  * https://blog.moove-it.com/jpa-onetomany-i-need-fk-child-table/ Option 2
@@ -14,10 +20,25 @@ import javax.persistence.Id;
  */
 @Entity
 public class Phone {
-
+	@Id
+	@Column(nullable = false)
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Integer id;
 
 	private String phoneNumber;
+
+	@Temporal(TemporalType.TIMESTAMP)
+	@Column(name = "created_on")
+	@CreationTimestamp
+	private Date createdOn;
+
+	public Date getCreatedOn() {
+		return createdOn;
+	}
+
+	public void setCreatedOn(Date createdOn) {
+		this.createdOn = createdOn;
+	}
 
 	public Phone() {
 
@@ -27,9 +48,6 @@ public class Phone {
 		phoneNumber = stringPhone;
 	}
 
-	@Id
-	@Column(nullable = false)
-	@GeneratedValue(strategy = GenerationType.AUTO)
 	public Integer getId() {
 		return id;
 	}
